@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Message</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- Custom Utility Styles -->
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+
+        .glass-inner-border {
+            box-shadow:
+                inset 1px 1px 0px rgba(255, 255, 255, 0.1),
+                inset -1px -1px 0px rgba(189, 0, 255, 0.2);
+        }
+
+        .neon-glow-primary {
+            box-shadow: 0 0 20px rgba(189, 0, 255, 0.3);
+        }
+
+        .neon-glow-secondary {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        background: "#171021",
+                        surface: "#171021",
+                        primary: "#ecb2ff",
+                        primaryContainer: "#bd00ff",
+                        secondaryContainer: "#00eefc",
+                        tertiary: "#94db00",
+                        onBackground: "#eadef6",
+                        onSurface: "#eadef6",
+                        onSurfaceVariant: "#d4c0d7",
+                        inversePrimary: "#9900cf"
+                    },
+                    fontFamily: {
+                        body: ["Inter"],
+                        headline: ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-onBackground font-body min-h-screen relative overflow-hidden">
+
+    <!-- Ambient Background Glow -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/20 blur-[120px] rounded-full z-0"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-cyan-400/10 blur-[120px] rounded-full z-0"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-black/20 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-6 h-16 shadow-[0_0_20px_rgba(189,0,255,0.15)]">
+        <div class="flex items-center gap-4">
+            <a href="/" class="text-fuchsia-400 hover:text-white transition">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <h1 class="text-xl font-bold text-white tracking-widest font-headline">
+                Messages
+            </h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-24 pb-24 min-h-screen flex items-center justify-center px-6">
+
+        <div class="w-full max-w-2xl">
+
+            <!-- Message Card -->
+            <div class="relative glass-inner-border bg-white/5 backdrop-blur-2xl rounded-[32px] p-10 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
+
+                <!-- Decorative Glow -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-fuchsia-500/20 to-transparent blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-cyan-400/10 to-transparent blur-2xl"></div>
+
+                <div class="relative flex flex-col items-center text-center space-y-6">
+
+                    <!-- Avatar -->
+                
+
+                    <!-- Dynamic Content -->
+                    <div>
+                        <h1 class="text-4xl font-bold text-white mt-2 font-headline">
+                            Hii, {{ name }}!
+                        </h1>
+                    </div>
+
+                    <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent opacity-50"></div>
+
+                    <p class="text-lg text-gray-300 max-w-md leading-relaxed">
+                        {{ message }}
+                    </p>
+
+                    <!-- Buttons -->
+
+                        <a href="/" class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors duration-200">
+                            <span class="material-symbols-outlined text-[18px]">
+                                chevron_left
+                            </span>
+                            Go Back
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
