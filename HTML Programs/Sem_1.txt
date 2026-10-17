@@ -1,6 +1,0 @@
-Python Programming
-Data Structure and Algorithms
-Advanced DBMS
-Business Statistics
-Software Engineering and Project Management
-Web Development
