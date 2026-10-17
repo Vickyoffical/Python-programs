@@ -1,0 +1,1 @@
+'outtmpl':r"E:/Download/%(title)s-%(id)s.%(ext)s"

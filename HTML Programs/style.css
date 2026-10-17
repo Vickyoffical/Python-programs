@@ -1,0 +1,84 @@
+body{
+    background-color: rgb(185, 210, 240);
+}
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* text-align: center; */
+    margin-left: 400px;
+    margin-top: -160px;
+    font-size: xxx-large;
+    color: rgb(44, 5, 74);
+}
+
+img{
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 5px;
+    /* border-width: 5px; */
+}
+
+h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* text-align: center; */
+    font-size: xx-large;
+    margin-left: 400px;
+    color: rgb(44, 5, 74);
+}
+
+h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    margin-left: 20px;
+    color: rgb(44, 5, 74);
+}
+
+
+#career_obj{
+    font-size: x-large;
+    margin-left: 1000px;
+    margin-top: -140px;
+    margin-bottom: 120px;
+}
+
+#brief_info{
+    margin-left: 1000px;
+    margin-top: -100px;
+}
+
+#ed_tb{
+    background-color: rgb(133, 185, 250);
+    margin-left: 20px;
+    /* margin-top: -80px; */
+    /* border-radius: 50px; */
+}
+
+/* tr{
+    padding: 10px;
+    border-spacing: 20px;
+} */
+
+
+li{
+    font-size: large;
+    color: rgb(44, 5, 74);
+}
+
+
+tr{
+    font-size: large;
+    text-align: center;
+    color: rgb(44, 5, 74);
+}
+
+#h3_skills{
+    margin-left: 1000px;
+    margin-top: -210px;
+    margin-bottom: 110px;
+}
+
+ul{
+    margin-left: 1000px;
+    margin-top: -100px;
+    margin-bottom: 80px;
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SyncRoom: UI mockup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-role="host">
+<header class="bar">
+  <div class="brand"><i></i>SyncRoom</div>
+  <nav>
+    <button class="nv on" data-go="login">Sign in</button>
+    <button class="nv" data-go="dash">Rooms</button>
+    <button class="nv" data-go="room">Room</button>
+  </nav>
+</header>
+<main>
+
+<section class="scr on" id="login">
+  <div class="login">
+    <div class="stack">
+      <h1>Press play once. Everyone hears it together.</h1>
+      <p class="mute">Join a room on this Wi-Fi, bring your own headphones, and watch in sync without a TV.</p>
+    </div>
+    <form class="card" id="lf">
+      <h2 id="lt">Sign in</h2>
+      <div id="dn" hidden><label for="d">Display name</label><input type="text" id="d" value="Meera"></div>
+      <label for="u">Username</label><input type="text" id="u" value="meera">
+      <label for="p">Password</label><input type="password" id="p" value="password123">
+      <div class="row" style="margin-top:16px"><button class="btn pri" id="lb" type="submit">Sign in</button>
+      <button class="btn" type="button" id="sw">Create an account</button></div>
+    </form>
+  </div>
+</section>
+
+<section class="scr" id="dash">
+  <div class="dash">
+    <div class="card">
+      <h2>Rooms on this network</h2>
+      <p class="mute" style="margin:4px 0 8px">Only listed rooms appear here. Private rooms need a code.</p>
+      <div id="rooms"></div>
+    </div>
+    <div class="stack">
+      <form class="card" id="cf">
+        <h3>Create a room</h3>
+        <label for="rn">Room name</label><input type="text" id="rn" value="Friday movie night" maxlength="40">
+        <label for="vs">Visibility</label><select id="vs"><option>Listed on the dashboard</option><option>Unlisted (code only)</option></select>
+        <label for="jp">Who can join</label><select id="jp"><option>Anyone, instantly</option><option selected>Host approves each person</option><option>Anyone with the room password</option></select>
+        <button class="btn pri" style="margin-top:16px;width:100%">Create room</button>
+      </form>
+      <div class="card"><h3>Have a code?</h3>
+        <div class="row" style="margin-top:8px"><input type="text" placeholder="K7M2QX" maxlength="6"><button class="btn" data-toast="Code not found. Check it with the host.">Join</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="scr" id="room">
+  <div class="rhead">
+    <h2 id="rt">Friday movie night</h2>
+    <span class="pill" id="rp">You are the host</span>
+    <span class="pill">Join at http://192.168.43.12:8000 &middot; code K7M2QX</span>
+    <div class="sp row"><span class="mute" style="font-size:13px">Preview as</span>
+      <div class="seg" id="seg"><button class="on" data-r="host">Host</button><button data-r="participant">Participant</button></div></div>
+  </div>
+  <div class="rg">
+    <div class="stack">
+      <div class="card">
+        <div class="stage"><span class="pill" id="sy">Synced &middot; 38 ms</span><span style="opacity:.8;font-size:13px">Now playing</span><b>Big Buck Bunny</b></div>
+        <div class="ctl">
+          <button class="pp" id="pp" aria-label="Play or pause">&#10074;&#10074;</button>
+          <input type="range" id="sk" min="0" max="596" step="1" value="125" aria-label="Seek">
+          <span class="tm" id="tm">2:05 / 9:56</span>
+          <button class="btn sm hostonly" id="st">Stop</button>
+        </div>
+        <p class="note" id="pn">Pausing pauses the room for everyone, so nobody misses a scene.</p>
+      </div>
+      <div class="card"><div class="row"><h3>Up next</h3><span class="mute sp" style="font-size:13px" id="qc"></span></div><div id="queue" style="margin-top:6px"></div>
+        <div class="row" style="margin-top:12px"><input type="text" id="rq" placeholder="Request a title for the host"><button class="btn" id="rb">Send request</button></div></div>
+    </div>
+    <div class="stack">
+      <div class="card"><h3>People in the room</h3><div id="ppl" style="margin-top:6px"></div></div>
+      <div class="card hostonly"><h3>Waiting to join</h3><div id="jr" style="margin-top:6px"></div></div>
+      <div class="card"><h3 id="rqt">Media requests</h3><div id="rqs" style="margin-top:6px"></div></div>
+      <div class="card hostonly"><h3>Room rules</h3>
+        <label class="tg" style="font-weight:500;font-size:15px;margin:0">Participants can pause and play<input type="checkbox" checked data-toast="Rule saved. Everyone sees the change."></label>
+        <label class="tg" style="font-weight:500;font-size:15px;margin:0">Participants can request media<input type="checkbox" checked data-toast="Rule saved. Everyone sees the change."></label>
+        <label class="tg" style="font-weight:500;font-size:15px;margin:0">Join requests need approval<input type="checkbox" checked data-toast="Rule saved. Everyone sees the change."></label>
+        <div class="row" style="margin-top:10px"><button class="btn sm bad" data-toast="Room closed. Everyone was sent back to the dashboard.">Close room</button></div></div>
+    </div>
+  </div>
+  <p class="note">Mockup with sample data. Sync, login and rooms are not wired to a server.</p>
+</section>
+</main>
+<div class="toast" id="ts" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
